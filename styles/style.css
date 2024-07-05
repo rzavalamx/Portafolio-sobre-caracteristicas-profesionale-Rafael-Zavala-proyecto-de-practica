@@ -1,0 +1,154 @@
+/* Importando Fuente de la Biblioteca de Google Fonts /*
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* Definicion de Variables CSS */
+:root {
+    --color-primario: #000000;
+    --color-secundario: #F6F6f6;
+    --color-terciario: #22D4FD;
+    --color-hover: #272727;
+    --fuente-montserrat: 'Montserrat', sans serif;
+    --fuente-krona: 'Krona One', sans serif;    
+}
+
+/* Para resetear mi CSS */       
+* {
+    padding: 0;
+    margin:0;
+}
+
+body{
+    background-color: var(--color-primario);
+    /*height: 100vh;        /* Para Visualizar la vista hacia arriba */
+    box-sizing: border-box; /* Hacer que elementos Hijos se ajusten al Padre */
+    color: var(--color-secundario);
+}
+
+.header {
+    padding: 2% 0% 0% 15%; /* padding: top right bottom left(15% tomado del margin horizontal izquiero de .presentacion */
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;  /* Para poner una separacion entre << Home-----Acerca de Mi >> */
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+/* display: flex; -  Tiene como objetivo organizar o posicionar elementos en la pantalla
+                     de forma dinámica y mantener un diseño flexible. 
+                     Crea un Contenedor flex, los elementos se convierten en
+                     elementos Hijo y mostraran comportamientos estandarizados */
+
+.presentacion {          
+    /*margin: 10% 15%;*/  /* Crea un espacio afuera del elemento ya sea Vertical u Horizontal */
+    padding: 3% 15%;      /* Crea un espacio dentro del elemento ya sea Vertical u Horizontal */         
+    display: flex;        /* Metodo de Diseño para ajustar en pantalla los elementos filas y columnas. */
+    align-items: center;  /* Centralizar Elementos del display: flex */
+    justify-content: space-between; /* Justificar elementos con espacion intermedios entre ellos */
+    gap: 82px;            /* Empezamos por ajustar el Diseño para pantallas mas pequeñas. */
+}
+
+.presentacion__contenido {
+    /*width: 615px; /* Cambiar ancho de una seccion */
+    width: 50%;     /* Para redimensionar pantalla.*/
+    display: flex;
+    flex-direction: column; /* Pasicionar los elementos en columnas o verticalmente */
+    gap: 40px; /*Espaciar elementos Hijo horizontales y verticales.*/
+}    
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; /* Alinear los botones verticalmente o en columna */
+    align-items: center;
+    gap: 20px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link {
+    /*background-color: #22D4FD;*/
+    /*width: 378px;*/
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0; /*padding es responsable de definir la distancia entre bordes y contenido, es como una respiracion. */
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+    border: 2px solid var(--color-terciario); /* Poner un borde a los botones */
+    display: flex; /* Alinear los iconos y descripcion del boton a la izquierda */
+    justify-content: center; /* Cetramos los iconos en el boton correspondiente. */
+    gap: 10px; /*Espaciar icono con respecto al texto del boton. */
+}
+
+/* hover - Esta propiedad cambia el aspecto del boton cuando posicionamos sobre el */
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+    border: 2px solid color(--color-secundario);
+    padding: 5%;
+    cursor: pointer;
+}
+
+.presentacion__imagen {
+    width: 50%;
+}
+
+.footer {
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+    */ Comportamiento en modo Movile */
+    */ Posicinar la Imagen arriba del h1 */
+    
+    .header {
+        padding: 10%;
+    }
+
+    .header__menu {
+        justify-content: center;
+    }
+
+    .presentacion {
+        flex-direction: column-reverse; 
+        padding: 5%;
+    }
+
+    .presentacion__contenido {
+        width: auto;  /* width: auto - Va a adaptarse siempre al elementro Padre. */
+    }
+}
